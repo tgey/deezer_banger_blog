@@ -5,7 +5,6 @@ import Navbar from 'components/Navbar';
 import { GlobalStyle } from 'components/GlobalStyles';
 import NavigationDrawer from 'components/NavigationDrawer';
 import React, { PropsWithChildren } from 'react';
-import Head from 'next/head'
 
 import type { AppProps } from "next/app";
 
@@ -16,29 +15,11 @@ const navItems: NavItems = [
   // { title: 'Contact', href: '/contact', outlined: true },
 ];
 
-const criticalThemeCss = `
-.next-light-theme {
---background: #fff;
---text: #000;
-}
-
-.next-dark-theme {
---background: #000;
---text: #fff;
-}
-
-body {
-  background: var(--background);
-  color: var(--text);
-}
-`
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
   <>
-    <Head>
-        <style dangerouslySetInnerHTML={{ __html: criticalThemeCss }} />
-    </Head>
+   
     <ColorModeScript />
     <GlobalStyle />
     <Providers>
