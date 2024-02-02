@@ -26,6 +26,7 @@
     "react-share": "^5.0.3",
     "reading-time": "^1.5.0",
     "schema-dts": "^1.1.2",
+    "sharp": "^0.33.2",
     "styled-components": "^6.1.8",
     "swiper": "^11.0.5",
     "tinacms": "^1.5.28",

@@ -5,8 +5,11 @@ import Navbar from 'components/Navbar';
 import { GlobalStyle } from 'components/GlobalStyles';
 import NavigationDrawer from 'components/NavigationDrawer';
 import React, { PropsWithChildren } from 'react';
+import dynamic from 'next/dynamic';
+import { TinaEditProvider } from 'tinacms/dist/edit-state';
 
 import type { AppProps } from "next/app";
+const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
 
 import { NavItems } from 'types';
 
@@ -25,7 +28,23 @@ export default function App({ Component, pageProps }: AppProps) {
     <Providers>
       <Navbar items={navItems} />
 
-      <Component {...pageProps} />;
+      <TinaEditProvider
+          editMode={
+            <TinaCMS
+              query={pageProps.query}
+              variables={pageProps.variables}
+              data={pageProps.data}
+              isLocalClient={!process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
+              branch={process.env.NEXT_PUBLIC_EDIT_BRANCH}
+              clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
+              {...pageProps}
+            >
+              {(livePageProps: any) => <Component {...livePageProps} />}
+            </TinaCMS>
+          }
+        >
+          <Component {...pageProps} />
+        </TinaEditProvider>
       <Footer />
 
       </Providers>

@@ -8,15 +8,21 @@ interface HeaderProps {
   formattedDate: string;
   imageUrl: string;
   readTime: string;
+  link: string;
 }
 
-export default function Header({ title, formattedDate, imageUrl, readTime }: HeaderProps) {
+export default function Header({ title, formattedDate, imageUrl, readTime, link }: HeaderProps) {
   return (
     <HeaderContainer>
       <ArticleImage src={imageUrl} />
       <Title>{title}</Title>
       <DetailsContainer>
         {formattedDate} - {readTime}
+      </DetailsContainer>
+      <DetailsContainer>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          Ecouter directement
+        </a>
       </DetailsContainer>
     </HeaderContainer>
   );

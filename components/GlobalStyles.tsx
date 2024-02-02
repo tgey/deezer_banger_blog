@@ -28,16 +28,16 @@ export const GlobalStyle = createGlobalStyle`
 // }
 
 .next-light-theme {
-  --background: 251,251,253;
+  --background: 244,243,239;
   --secondBackground: 55,53,59;
   --text: 36,37,73;
   --textSecondary: 255,255,255;
   --primary: 22,115,255; 
   --secondary: 139,105,90;
   --tertiary: 245,204,181;
-  --priceBackground: 251,251,253;
+  --priceBackground: 244,243,239;
   --priceOutlinedColor: 45,55,72;
-  --cardBackground: 251,251,253;
+  --cardBackground: 244,243,239;
   --card2Background: 155,205,208;
   --card3Background: 245,204,181;
   --inputBackground: 251,251,253;

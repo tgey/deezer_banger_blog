@@ -30,6 +30,11 @@ export const schema = defineSchema({
         },
         {
           type: 'string',
+          label: 'Link (Deezer, Spotify, Youtube, Apple Music...)',
+          name: 'link',
+        },
+        {
+          type: 'string',
           label: 'Tags',
           name: 'tags',
         },
@@ -74,7 +79,7 @@ export const schema = defineSchema({
               label: 'ArticleImage',
               fields: [
                 {
-                  type: 'string',
+                  type: 'image',
                   name: 'src',
                   label: 'Src',
                 },

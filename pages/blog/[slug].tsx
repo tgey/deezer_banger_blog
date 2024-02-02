@@ -59,8 +59,8 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
   if (!data) {
     return null;
   }
-  const { title, description, date, tags, imageUrl } = data.post as NonNullableChildrenDeep<Post>;
-  const meta = { title, description, date: date, tags, imageUrl, author: '' };
+  const { title, description, date, link, tags, imageUrl } = data.post as NonNullableChildrenDeep<Post>;
+  const meta = { title, description, date: date, link, tags, imageUrl, author: '' };
   const formattedDate = formatDate(new Date(date));
   const absoluteImageUrl = imageUrl.replace(/\/+/, '/');
   return (
@@ -75,7 +75,7 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
       <MetadataHead {...meta} />
       <CustomContainer id="content" ref={contentRef}>
         {/* <ShareWidget title={title} slug={slug} /> */}
-        <Header title={title} formattedDate={formattedDate} imageUrl={absoluteImageUrl} readTime={readTime} />
+        <Header title={title} formattedDate={formattedDate} imageUrl={absoluteImageUrl} readTime={readTime} link={link} />
         <MDXRichText content={content} />
       </CustomContainer>
     </>
