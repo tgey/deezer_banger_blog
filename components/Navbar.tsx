@@ -65,7 +65,7 @@ export default function Navbar({ items }: NavbarProps) {
 
   const home_button = { title: 'Home', href: '/', outlined: true }
   return (
-    <NavbarContainer hidden={isNavbarHidden}>
+    <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
       <Content>
         <NextLink href="/" legacyBehavior passHref>
           <LogoWrapper>
